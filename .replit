@@ -1,0 +1,20 @@
+modules = ["python-3.12", "web", "nodejs-20", "bash"]
+run = "npx serve -p 8080"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "npx serve -p 8080"]
+
+[[ports]]
+localPort = 8080
+externalPort = 80
+
+[[ports]]
+localPort = 35919
+externalPort = 3001
+
+[[ports]]
+localPort = 40819
+externalPort = 3000
